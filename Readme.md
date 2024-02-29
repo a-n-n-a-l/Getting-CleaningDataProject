@@ -21,7 +21,7 @@ The script **run_analysis.R** does the following:
 - creates easy to read labels for the variables
 - extracts only the information related to the *mean* and *standard deviation* variables
 - next, it groups the data by *SubjectID* and *Activity* and averages each of the variables from the previous data set
-- both data sets are also saved as .csv files **filteredData.csv** for the first data set **tidyData.csv** for the second data set
+- both data sets are also saved as .csv files **filteredData.csv** for the first data set **tidyData.csv** for the second data set (also creates a **tidyData.txt** as requested in the submission guidelines)
 
 
 ## To use ##
