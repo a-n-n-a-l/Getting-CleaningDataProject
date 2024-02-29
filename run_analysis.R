@@ -147,7 +147,7 @@ for (m in 3:length(newColumnNames)) {
 colnames(tidyData) <- newColumnNames
  
 write.csv(tidyData, file="tidyData.csv")                    # copy the new data set to a .csv file
-
+write.table(tidyData, file="tidyData.txt", row.name=FALSE)
 
 View(tidyData)                                              # display the data set with averages for the filtered data set
 
