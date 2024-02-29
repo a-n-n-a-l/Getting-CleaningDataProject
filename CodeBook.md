@@ -40,7 +40,7 @@ The script [**run_analysis.R**](run_analysis.R) does the following with the raw 
     + the first 2 variables are factors (see description of "SubjectID" and "Activity" below)
     + the rest are numerical values that each range from -1 to 1 
 - next, it groups the data by *SubjectID* and *Activity* and averages each of the variables from the previous data set resulting in an object called **tidyData** that consists of 180 observations across 88 variables - one for each feature average per Subject-Activity pair
-- both resulting data sets are also saved as .csv files **filteredData.csv** for the first data set **tidyData.csv** for the second data set
+- both resulting data sets are also saved as .csv files **filteredData.csv** for the first data set **tidyData.csv** and **tidyData.txt** for the second data set
 
 
 ## Variable names in cleaned data ##
