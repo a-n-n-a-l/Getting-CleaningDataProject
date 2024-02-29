@@ -28,7 +28,7 @@ The script [**run_analysis.R**](run_analysis.R) does the following with the raw 
 
 - reads the test and training data sets from **/raw-data/** into R
     + `activities` - contains the activity labels from the file "activity_labels.txt"
-    + `features` - contains the original feature names from the file "features_info.txt"
+    + `features` - contains the original feature names from the file "features.txt"
     + the rest of the required data was read in under the same name as each of the file names (undrescores were removed for the R object names)
 - creates easy to read labels for the variables
     + all of the text from the data was cleaned to remove non-alphabetic characters, and words were expanded from abbreviations to make more sense to someone not familiar with the data
