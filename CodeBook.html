@@ -399,14 +399,38 @@ them into frequency domain signals.</li>
 following with the raw data described above:</p>
 <ul>
 <li>reads the test and training data sets from
-<strong>/raw-data/</strong> into R</li>
-<li>merges and cleans up the data sets</li>
-<li>creates easy to read labels for the variables</li>
+<strong>/raw-data/</strong> into R
+<ul>
+<li><code>activities</code> - contains the activity labels from the file
+“activity_labels.txt”</li>
+<li><code>features</code> - contains the original feature names from the
+file “features_info.txt”</li>
+<li>the rest of the required data was read in under the same name as
+each of the file names (undrescores were removed for the R object
+names)</li>
+</ul></li>
+<li>creates easy to read labels for the variables
+<ul>
+<li>all of the text from the data was cleaned to remove non-alphabetic
+characters, and words were expanded from abbreviations to make more
+sense to someone not familiar with the data</li>
+</ul></li>
+<li>merges and cleans up the data sets
+<ul>
+<li>the <em>test</em> and <em>train</em> data sets were combined by
+combining the respective counterparts - subject, activity and data
+information, by using the <em>rbind()</em> function</li>
+<li>a new object called <strong>filteredData</strong> was created by
+using the <em>cbind()</em> function and assigning the cleaned up text as
+column headers for the data</li>
+</ul></li>
 <li>extracts only the information related to the <em>mean</em> and
 <em>standard deviation</em> variables
 <ul>
-<li>results in an object called <strong>filteredData</strong> that
-consists of 10,299 observations across 88 variables</li>
+<li>only variables mentioning the <em>mean</em> and <em>standard
+deviation</em> were kept resulting in the updated
+<strong>filteredData</strong> object that consists of 10,299
+observations across 88 variables</li>
 <li>the first 2 variables are factors (see description of “SubjectID”
 and “Activity” below)</li>
 <li>the rest are numerical values that each range from -1 to 1</li>

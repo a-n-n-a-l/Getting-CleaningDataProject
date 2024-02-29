@@ -27,14 +27,20 @@ These signals (time domain signals (prefix 't' to denote time)) were captured at
 The script [**run_analysis.R**](run_analysis.R) does the following with the raw data described above:
 
 - reads the test and training data sets from **/raw-data/** into R
-- merges and cleans up the data sets
+    + `activities` - contains the activity labels from the file "activity_labels.txt"
+    + `features` - contains the original feature names from the file "features_info.txt"
+    + the rest of the required data was read in under the same name as each of the file names (undrescores were removed for the R object names)
 - creates easy to read labels for the variables
+    + all of the text from the data was cleaned to remove non-alphabetic characters, and words were expanded from abbreviations to make more sense to someone not familiar with the data
+- merges and cleans up the data sets
+    + the *test* and *train* data sets were combined by combining the respective counterparts - subject, activity and data information, by using the *rbind()* function
+    + a new object called **filteredData** was created by using the *cbind()* function and assigning the cleaned up text as column headers for the data
 - extracts only the information related to the *mean* and *standard deviation* variables 
-    + results in an object called **filteredData** that consists of 10,299 observations across 88 variables
+    + only variables mentioning the *mean* and *standard deviation* were kept resulting in the updated **filteredData** object that consists of 10,299 observations across 88 variables
     + the first 2 variables are factors (see description of "SubjectID" and "Activity" below)
     + the rest are numerical values that each range from -1 to 1 
 - next, it groups the data by *SubjectID* and *Activity* and averages each of the variables from the previous data set resulting in an object called **tidyData** that consists of 180 observations across 88 variables - one for each feature average per Subject-Activity pair
-- both data sets are also saved as .csv files **filteredData.csv** for the first data set **tidyData.csv** for the second data set
+- both resulting data sets are also saved as .csv files **filteredData.csv** for the first data set **tidyData.csv** for the second data set
 
 
 ## Variable names in cleaned data ##
